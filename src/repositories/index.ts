@@ -1,0 +1,11 @@
+export { userRepository } from "./user.repository";
+export { profileRepository } from "./profile.repository";
+export { universityRepository } from "./university.repository";
+export { programRepository } from "./program.repository";
+export { scholarshipRepository } from "./scholarship.repository";
+export { countryRepository } from "./country.repository";
+export { rankingRepository } from "./ranking.repository";
+export { recommendationRepository } from "./recommendation.repository";
+export { applicationRepository } from "./application.repository";
+export { documentRepository } from "./document.repository";
+export { recommendationEngineRepository } from "./recommendation-engine.repository";
