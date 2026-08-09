@@ -1,11 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const SSLCOMMERZ_API_URL = process.env.SSLCOMMERZ_API_URL!;
-const STORE_ID = process.env.SSLCOMMERZ_STORE_ID!;
-const STORE_PASSWORD = process.env.SSLCOMMERZ_STORE_PASSWORD!;
-
 export async function POST(request: NextRequest) {
   try {
+    // ── Guard: ensure credentials are configured on the server ──────────────
+    const SSLCOMMERZ_API_URL = process.env.SSLCOMMERZ_API_URL;
+    const STORE_ID = process.env.SSLCOMMERZ_STORE_ID;
+    const STORE_PASSWORD = process.env.SSLCOMMERZ_STORE_PASSWORD;
+
+    if (!SSLCOMMERZ_API_URL || !STORE_ID || !STORE_PASSWORD) {
+      console.error(
+        "[payment/initiate] Missing env vars:",
+        { SSLCOMMERZ_API_URL: !!SSLCOMMERZ_API_URL, STORE_ID: !!STORE_ID, STORE_PASSWORD: !!STORE_PASSWORD }
+      );
+      return NextResponse.json(
+        { error: "Payment gateway is not configured. Please contact support." },
+        { status: 500 }
+      );
+    }
+
+    // ── Parse & validate request body ────────────────────────────────────────
     const body = await request.json();
     const { tickets, amount, customerName, customerEmail, customerPhone } = body;
 
@@ -24,15 +37,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Generate a unique transaction ID
+    // ── Build transaction ─────────────────────────────────────────────────────
     const tranId = `MJR-INV-${Date.now()}-${Math.random().toString(36).substring(2, 8).toUpperCase()}`;
-
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || "https://investor.muntajar.com";
 
-    // Build URLSearchParams payload as required by SSLCommerz (application/x-www-form-urlencoded)
     const params = new URLSearchParams();
 
-    // Integration credentials
+    // Credentials
     params.append("store_id", STORE_ID);
     params.append("store_passwd", STORE_PASSWORD);
 
@@ -59,26 +70,27 @@ export async function POST(request: NextRequest) {
     params.append("cus_country", "Bangladesh");
     params.append("cus_phone", customerPhone);
 
-    // Shipping info (not physical, use NO)
+    // Shipping (non-physical product)
     params.append("shipping_method", "NO");
     params.append("num_of_item", String(tickets));
 
-    // Pass metadata through value_a and value_b for use on success page
+    // Custom metadata passed back on success
     params.append("value_a", String(tickets));
     params.append("value_b", customerName);
     params.append("value_c", tranId);
 
-    // Call SSLCommerz session creation API
+    // ── Call SSLCommerz session API ───────────────────────────────────────────
+    console.log("[payment/initiate] Calling SSLCommerz:", SSLCOMMERZ_API_URL, "tran_id:", tranId);
+
     const sslResponse = await fetch(SSLCOMMERZ_API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: params.toString(),
     });
 
     if (!sslResponse.ok) {
-      console.error("SSLCommerz API error:", sslResponse.status, await sslResponse.text());
+      const errText = await sslResponse.text();
+      console.error("[payment/initiate] SSLCommerz HTTP error:", sslResponse.status, errText);
       return NextResponse.json(
         { error: "Failed to connect to SSLCommerz. Please try again." },
         { status: 502 }
@@ -86,24 +98,25 @@ export async function POST(request: NextRequest) {
     }
 
     const sslData = await sslResponse.json();
+    console.log("[payment/initiate] SSLCommerz response status:", sslData.status);
 
     if (sslData.status !== "SUCCESS") {
-      console.error("SSLCommerz session failed:", sslData.failedreason);
+      console.error("[payment/initiate] SSLCommerz session failed:", sslData.failedreason);
       return NextResponse.json(
         { error: sslData.failedreason || "SSLCommerz session creation failed." },
         { status: 400 }
       );
     }
 
-    // Return the gateway URL to the client for redirect
     return NextResponse.json({
       success: true,
       gatewayUrl: sslData.GatewayPageURL,
       sessionkey: sslData.sessionkey,
       tranId,
     });
+
   } catch (error) {
-    console.error("Payment initiation error:", error);
+    console.error("[payment/initiate] Unhandled error:", error);
     return NextResponse.json(
       { error: "Internal server error. Please try again." },
       { status: 500 }
