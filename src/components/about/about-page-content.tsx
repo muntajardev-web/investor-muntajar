@@ -596,7 +596,67 @@ export function AboutPageContent() {
         </div>
       </section>
 
-      {/* ─── 8. OFFICE & CONTACT CARD ────────────────────────────── */}
+      {/* ─── 8. COMPANY & LEGAL REGISTRATION ───────────────────────── */}
+      <section className="py-20 bg-[#FAF9F7] border-t border-stone-200">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="mb-10 space-y-3">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-100 border border-orange-200 text-orange-900 text-xs font-black uppercase tracking-wider">
+              <Building2 className="w-3.5 h-3.5" />
+              Company &amp; Legal Registration
+            </span>
+            <h2 className="font-sans font-extrabold text-3xl sm:text-4xl text-stone-950 tracking-tight">
+              About Muntajar Global Ltd.
+            </h2>
+            <p className="text-stone-600 text-base max-w-2xl font-normal">
+              Muntajar Global Ltd. is a legally registered company in Bangladesh, operating under the jurisdiction of Dhaka South City Corporation (DSCC).
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {[
+              { label: "Company Name", value: "Muntajar Global Ltd." },
+              { label: "Trade License No.", value: "TRAD/DSCC/003932/2025" },
+              { label: "Issuing Authority", value: "Dhaka South City Corporation (DSCC)" },
+              { label: "Registered Address", value: "332/A, Khilgaon, Tilpapara, Khilgaon, Dhaka-1219, Bangladesh" },
+              { label: "Business Type", value: "Private Limited Company — Technology & EdTech" },
+              { label: "Year Established", value: "2024" },
+            ].map((item) => (
+              <div key={item.label} className="p-5 rounded-2xl bg-white border border-stone-200 shadow-2xs space-y-1.5">
+                <p className="text-[10px] font-black text-orange-600 uppercase tracking-widest">{item.label}</p>
+                <p className="text-sm font-bold text-stone-900 leading-relaxed">{item.value}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Management section */}
+          <div className="p-6 sm:p-8 rounded-3xl bg-white border border-stone-200 shadow-2xs">
+            <h3 className="font-sans font-extrabold text-xl text-stone-950 mb-6 flex items-center gap-2">
+              <Users className="w-5 h-5 text-amber-600" />
+              Management &amp; Leadership
+            </h3>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {[
+                { name: "Founder & CEO", title: "Muntajar Global Ltd.", desc: "Visionary behind Bangladesh's first broker-free global mobility platform." },
+                { name: "Chief Technology Officer", title: "Platform & Engineering", desc: "Leads the tech infrastructure powering seamless global mobility services." },
+                { name: "Chief Operations Officer", title: "Operations & Compliance", desc: "Oversees regulatory compliance, partner relations, and service delivery." },
+              ].map((person) => (
+                <div key={person.name} className="flex items-start gap-4 p-4 rounded-2xl bg-[#FAF9F7] border border-stone-200">
+                  <div className="w-10 h-10 rounded-xl bg-stone-200 flex items-center justify-center shrink-0 text-stone-500 font-black text-sm">
+                    {person.name[0]}
+                  </div>
+                  <div>
+                    <p className="text-sm font-black text-stone-900">{person.name}</p>
+                    <p className="text-[11px] text-orange-600 font-bold mb-1">{person.title}</p>
+                    <p className="text-[11px] text-stone-500 leading-relaxed">{person.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 9. OFFICE & CONTACT CARD ────────────────────────────── */}
       <section className="py-20 bg-white border-t border-stone-200">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="p-8 sm:p-12 rounded-3xl bg-[#FAF9F7] border border-stone-200 grid md:grid-cols-12 gap-8 items-center">
