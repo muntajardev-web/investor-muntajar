@@ -20,12 +20,11 @@ export function Footer() {
 
           {/* Logo & Description */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
-            <Image
-              src="/images/logo.png"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://i.imgur.com/2JK9HQv.png"
               alt="Muntajar"
-              width={160}
-              height={40}
-              className="h-8 w-auto mb-4 brightness-0 invert"
+              className="h-8 w-auto mb-4 object-contain brightness-0 invert"
             />
             <span className="text-[9px] tracking-[0.16em] font-extrabold uppercase text-amber-500 mb-3">
               Muntajar Global Ltd. — Equity &amp; Growth Platform

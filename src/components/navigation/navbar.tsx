@@ -48,13 +48,11 @@ export function Navbar({ className }: { className?: string }) {
             {/* Logo + Investor Badge */}
             <div className="flex items-center gap-3">
               <Link href="/" className="flex items-center shrink-0 select-none">
-                <Image
-                  src="/images/logo.png"
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://i.imgur.com/2JK9HQv.png"
                   alt="Muntajar"
-                  width={140}
-                  height={34}
-                  className="h-6 sm:h-7 w-auto"
-                  priority
+                  className="h-6 sm:h-7 w-auto object-contain"
                 />
               </Link>
               <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100/90 text-amber-900 border border-amber-300/60 text-[10px] font-extrabold uppercase tracking-wider">
@@ -172,14 +170,12 @@ export function Navbar({ className }: { className?: string }) {
         <div className="lg:hidden fixed inset-0 z-[999] bg-white flex flex-col justify-between overflow-y-auto px-6 py-6 animate-in fade-in duration-150">
           <div className="flex items-center justify-between h-14 border-b border-stone-200/80 pb-3">
             <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center shrink-0">
-              <Image
-                src="/images/logo.png"
-                alt="Muntajar"
-                width={130}
-                height={32}
-                className="h-6 w-auto"
-                priority
-              />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://i.imgur.com/2JK9HQv.png"
+                  alt="Muntajar"
+                  className="h-6 w-auto object-contain"
+                />
             </Link>
 
             <button
