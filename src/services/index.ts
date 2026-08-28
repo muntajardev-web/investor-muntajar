@@ -1,0 +1,13 @@
+export { recommendationEngineService } from "./recommendation/recommendation-engine.service";
+export { eligibilityScoringService } from "./recommendation/eligibility-scoring.service";
+export { filterPipeline } from "./recommendation/filter.pipeline";
+export { aiAnalysisService } from "./recommendation/ai-analysis.service";
+export { profileService } from "./profile/profile.service";
+export { universityService } from "./university/university.service";
+export { applicationService } from "./application/application.service";
+export { documentService } from "./storage/document.service";
+export { s3Service } from "./storage/s3.service";
+export { cacheService } from "./cache/cache.service";
+export { justificationService } from "./ai/justification.service";
+export { openaiClient } from "./ai/openai.client";
+export { authService } from "./auth/auth.service";

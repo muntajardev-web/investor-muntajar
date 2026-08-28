@@ -1,0 +1,31 @@
+name,country,city,ranking,type,degree_level,program,min_gpa,min_percentage,accepted_boards,min_ielts,min_toefl,min_sat,annual_tuition_usd,living_cost_usd,currency,scholarship_available,scholarship_percentage,application_fee
+University of Toronto,Canada,Toronto,21,Public,Bachelors,Computer Science,3.7,88,"A Levels;IB;HSC",6.5,90,1300,59000,18000,USD,Yes,25,180
+University of British Columbia,Canada,Vancouver,38,Public,Bachelors,Engineering,3.6,85,"A Levels;IB;HSC",6.5,90,1280,46000,17000,USD,Yes,20,170
+McGill University,Canada,Montreal,30,Public,Bachelors,Business,3.5,84,"A Levels;IB;HSC",6.5,90,1250,43000,16500,USD,Yes,30,160
+York University,Canada,Toronto,362,Public,Bachelors,Computer Science,3.0,75,"A Levels;IB;HSC",6.0,80,1150,33000,16000,USD,Yes,40,130
+Toronto Metropolitan University,Canada,Toronto,851,Public,Bachelors,Information Technology,2.8,70,"A Levels;IB;HSC",6.0,80,1100,28000,15500,USD,Yes,50,120
+University of Waterloo,Canada,Waterloo,115,Public,Bachelors,Software Engineering,3.8,90,"A Levels;IB",7.0,95,1380,61000,17500,USD,Yes,15,180
+University of Alberta,Canada,Edmonton,96,Public,Bachelors,Data Science,3.3,80,"A Levels;IB;HSC",6.5,90,1220,32000,15000,USD,Yes,35,140
+University of Calgary,Canada,Calgary,198,Public,Bachelors,Civil Engineering,3.2,78,"A Levels;IB;HSC",6.5,88,1200,29000,14500,USD,Yes,30,135
+University of Sydney,Australia,Sydney,18,Public,Bachelors,Computer Science,3.6,86,"A Levels;IB;HSC",6.5,90,1280,51000,19000,USD,Yes,20,180
+Monash University,Australia,Melbourne,37,Public,Bachelors,Pharmacy,3.2,80,"A Levels;IB;HSC",6.5,88,1200,43000,17500,USD,Yes,30,160
+UNSW Sydney,Australia,Sydney,19,Public,Bachelors,Engineering,3.7,88,"A Levels;IB",6.5,90,1300,49000,18000,USD,Yes,15,170
+University of Melbourne,Australia,Melbourne,13,Public,Bachelors,Artificial Intelligence,3.8,90,"A Levels;IB",7.0,95,1350,56000,19000,USD,Yes,20,180
+Deakin University,Australia,Melbourne,233,Public,Bachelors,Cyber Security,2.9,72,"A Levels;IB;HSC",6.0,80,1100,31000,15500,USD,Yes,45,120
+Griffith University,Australia,Brisbane,255,Public,Bachelors,Nursing,3.0,74,"A Levels;IB;HSC",6.5,85,1150,29000,15000,USD,Yes,35,120
+University of Adelaide,Australia,Adelaide,82,Public,Bachelors,Mechanical Engineering,3.3,80,"A Levels;IB;HSC",6.5,88,1200,37000,16500,USD,Yes,25,140
+University of Oxford,United Kingdom,Oxford,3,Public,Bachelors,Computer Science,3.9,95,"A Levels;IB",7.5,100,1450,65000,21000,USD,Yes,10,200
+University of Cambridge,United Kingdom,Cambridge,2,Public,Bachelors,Engineering,3.9,95,"A Levels;IB",7.5,100,1450,67000,21500,USD,Yes,10,200
+Imperial College London,United Kingdom,London,6,Public,Bachelors,Artificial Intelligence,3.8,92,"A Levels;IB",7.0,95,1400,61000,20500,USD,Yes,15,190
+University of Manchester,United Kingdom,Manchester,34,Public,Bachelors,Data Science,3.5,84,"A Levels;IB;HSC",6.5,90,1260,42000,17500,USD,Yes,25,160
+University of Birmingham,United Kingdom,Birmingham,80,Public,Bachelors,Business,3.2,78,"A Levels;IB;HSC",6.0,85,1180,34000,16000,USD,Yes,30,140
+University of Leeds,United Kingdom,Leeds,86,Public,Bachelors,Software Engineering,3.2,78,"A Levels;IB;HSC",6.0,85,1180,36000,16500,USD,Yes,30,140
+University of Glasgow,United Kingdom,Glasgow,78,Public,Bachelors,Law,3.1,76,"A Levels;IB;HSC",6.5,88,1180,33000,15500,USD,Yes,35,135
+Harvard University,USA,Cambridge,4,Private,Bachelors,Computer Science,3.9,95,"A Levels;IB",7.5,100,1450,59000,22000,USD,Yes,60,250
+Stanford University,USA,Stanford,6,Private,Bachelors,Artificial Intelligence,3.9,95,"A Levels;IB",7.5,100,1450,62000,22000,USD,Yes,50,250
+Massachusetts Institute of Technology,USA,Cambridge,1,Private,Bachelors,Engineering,4.0,97,"A Levels;IB",7.5,100,1500,61000,22000,USD,Yes,55,250
+Arizona State University,USA,Tempe,179,Public,Bachelors,Information Systems,3.0,75,"A Levels;IB;HSC",6.5,88,1180,32000,15000,USD,Yes,35,100
+University at Buffalo,USA,Buffalo,466,Public,Bachelors,Computer Science,3.0,75,"A Levels;IB;HSC",6.5,88,1180,29000,14500,USD,Yes,40,100
+Drexel University,USA,Philadelphia,721,Private,Bachelors,Business Analytics,2.9,72,"A Levels;IB;HSC",6.0,80,1100,41000,17000,USD,Yes,45,120
+University of Illinois Chicago,USA,Chicago,365,Public,Bachelors,Computer Science,3.1,76,"A Levels;IB;HSC",6.5,88,1200,31000,15500,USD,Yes,30,100
+Florida International University,USA,Miami,556,Public,Bachelors,Cyber Security,2.8,70,"A Levels;IB;HSC",6.0,80,1100,24000,14500,USD,Yes,50,90

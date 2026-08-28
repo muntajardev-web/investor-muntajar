@@ -1,0 +1,1 @@
+export { clerkWebhookHandler } from "./webhook";
